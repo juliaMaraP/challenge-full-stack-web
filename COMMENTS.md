@@ -1,104 +1,75 @@
-📐 Arquitetura da Solução
+
+# COMMENTS.md
+
+## 📐 Arquitetura da Solução
+
 O projeto foi dividido em três camadas principais:
 
-Frontend (Vue.js + Vuetify)
+- **Frontend** (`Vue.js + Vuetify`)
+  - SPA com roteamento via `vue-router`
+  - Interface limpa e responsiva com Vuetify, seguindo o Material Design
+  - Separação por componentes reutilizáveis
+  - Comunicação com backend via `axios`
 
-SPA com roteamento via vue-router
+- **Backend** (`Node.js + Express`)
+  - API RESTful organizada em rotas, controllers e serviços
+  - Autenticação com `JWT` protegendo as rotas de alunos
+  - Integração com MySQL via `Sequelize` como ORM
 
-Interface limpa e responsiva com Vuetify, seguindo o Material Design
+- **Banco de Dados** (`MySQL`)
+  - Executado em container Docker
+  - Tabelas bem definidas para alunos
+  - Persistência robusta com Sequelize Models
 
-Separação por componentes reutilizáveis
+> **Extra:** Ambiente dockerizado com `docker-compose` para fácil configuração do banco MySQL.
 
-Comunicação com backend via axios
+## 📦 Bibliotecas e Tecnologias Utilizadas
 
-Backend (Node.js + Express)
+### Frontend
+- `vue`
+- `vue-router`
+- `vuetify`
+- `axios`
+- `jwt-decode`
 
-API RESTful organizada em rotas, controllers e serviços
+### Backend
+- `express`
+- `cors`
+- `dotenv`
+- `jsonwebtoken`
+- `mysql2`
+- `sequelize`
 
-Autenticação com JWT protegendo as rotas de alunos
+### DevOps
+- `docker`
 
-Integração com MySQL via Sequelize como ORM
+## ✅ Requisitos entregues
 
-Banco de Dados (MySQL)
+- [x] Cadastro de aluno (com validação de campos obrigatórios)
+- [x] Edição de aluno (campos editáveis: nome e email)
+- [x] Exclusão de aluno com modal de confirmação
+- [x] Listagem de alunos com ações de editar/excluir
+- [x] Login com autenticação via JWT
+- [x] Roteamento protegido por autenticação
+- [x] Layout responsivo com Vuetify
+- [x] Separação de camadas no backend
+- [x] Integração com banco de dados MySQL
+- [x] Uso de Docker para banco de dados
 
-Executado em container Docker
+## 🧠 Melhorias futuras (com mais tempo)
 
-Tabelas bem definidas para alunos
+- 🔐 Implementar logout e expiração segura de token
+- 📧 Validação mais robusta de e-mail e CPF no backend
+- 🔁 Adicionar paginação na listagem de alunos
+- 🔄 Adicionar `Refresh Token` para sessões persistentes
+- 🧪 Implementar testes automatizados (Jest, Vitest, etc.)
+- 📄 Gerar documentação da API (Swagger ou similar)
+- 🚨 Melhorar tratamento de erros para feedback mais claro
 
-Persistência robusta com Sequelize Models
+## ❌ Requisitos não entregues
 
-Extra: Ambiente dockerizado com docker-compose para fácil configuração do banco MySQL.
-
-📦 Bibliotecas e Tecnologias Utilizadas
-Frontend
-vue
-
-vue-router
-
-vuetify
-
-axios
-
-jwt-decode
-
-Backend
-express
-
-cors
-
-dotenv
-
-jsonwebtoken
-
-mysql2
-
-sequelize
-
-DevOps
-docker
-
-✅ Requisitos entregues
- Cadastro de aluno (com validação de campos obrigatórios)
-
- Edição de aluno (campos editáveis: nome e email)
-
- Exclusão de aluno com modal de confirmação
-
- Listagem de alunos com ações de editar/excluir
-
- Login com autenticação via JWT
-
- Roteamento protegido por autenticação
-
- Layout responsivo com Vuetify
-
- Separação de camadas no backend
-
- Integração com banco de dados MySQL
+- [ ] Testes automatizados
+- [ ] Validação formal do CPF (regex ou biblioteca)
+- [ ] Funcionalidade de logout com botão no frontend
 
 
-🧠 Melhorias futuras (com mais tempo)
-🔐 Implementar logout e expiração segura de token
-
-📧 Validação mais robusta de e-mail e CPF no backend
-
-🔁 Adicionar paginação na listagem de alunos
-
-🔄 Adicionar Refresh Token para sessões persistentes
-
-🧪 Implementar testes automatizados (Jest, Vitest, etc.)
-
-📄 Gerar documentação da API (Swagger ou similar)
-
-🚨 Melhorar tratamento de erros para feedback mais claro
-
-🧑‍💻 Tela de login com validação visual + lembrete de sessão
-
-🧹 Melhor organização das mensagens e estados no frontend
-
-❌ Requisitos não entregues
- Testes automatizados
-
- Validação formal do CPF (regex ou biblioteca)
-
- Funcionalidade de logout com botão no frontend
